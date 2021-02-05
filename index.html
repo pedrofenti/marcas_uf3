@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Juegaco Phaser</title>
+<script src="//cdnjs.cloudflare.com/ajax/libs/phaser/3.52.0/phaser.min.js"></script>
+</head>
+
+<body>
+<h1>Nuestro fantastico juedo de JS/Phaser</h1>
+<script>
+const scene_w = 640;
+const scene_h = 480;
+
+const config = {
+	type: Phaser.AUTO,
+	width: scene_w,
+	height: scene_h,
+	scene: {
+		preload: preload,
+		create: create,
+		update: update
+	}
+};
+
+let game = new Phaser.Game(config);
+
+let background;
+
+function preload(){
+	this.load.image("background", "fondo_estrellado.jpg");
+}
+
+function create(){
+	 background = this.add.image(scene_w/2, scene_h/2, "background");
+}
+
+function update(){
+
+}
+
+</script>
+</body>
+
+</html>
