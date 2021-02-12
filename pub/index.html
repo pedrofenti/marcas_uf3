@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Juegaco Phaser</title>
+<script src="//cdnjs.cloudflare.com/ajax/libs/phaser/3.52.0/phaser.min.js"></script>
+</head>
+
+<body>
+<h1>Nuestro fantastico juedo de JS/Phaser</h1>
+<script>
+const scene_w = 640;
+const scene_h = 480;
+
+const config = {
+	type: Phaser.AUTO,
+	width: scene_w,
+	height: scene_h,
+	pixelArt: true,
+	scene: {
+		preload: preload,
+		create: create,
+		update: update
+	}
+};
+
+let game = new Phaser.Game(config);
+
+let car = [];
+
+let car_left_top_x = -128;
+let car_left_top_y = scene_h/2 + 52;
+
+let car_left_bottom_x = -128;
+let car_left_bottom_y = scene_h/2 + 136;
+
+let car_right_top_x = scene_w + 128;
+let car_right_top_y = scene_h/2 - 52;
+
+let car_right_bottom_x = scene_w + 128;
+let car_right_bottom_y = scene_h/2 - 136;
+
+let background;
+let player;
+let playerX = scene_w/2;
+let playerY = scene_h - 32;
+let left_key;
+let up_key;
+let right_key;
+let down_key;
+let dir = 2;
+
+function preload(){
+	this.load.image("background", "road.jpg");
+	this.load.image("car1","PNG/Cars/hotdog.png");
+	this.load.image("car2","PNG/Cars/police.png");
+	this.load.image("car3","PNG/Cars/buggy.png");
+	this.load.image("car4","PNG/Cars/bus.png");
+	this.load.image("car5","PNG/Cars/formula.png");
+	this.load.image("car6","PNG/Cars/police.png");
+	this.load.image("player","PNG/Characters/man.png");
+}
+
+function create(){
+
+   left_key = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
+	 up_key = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
+	 right_key = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
+	 down_key = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);
+
+	 background = this.add.image(scene_w/2, scene_h/2, "background");
+	 car.push(this.add.image(car_left_top_x, car_left_top_y, "car1"));
+	 car.push(this.add.image(car_left_bottom_x, car_left_bottom_y, "car2"));
+	 car.push(this.add.image(car_right_top_x,car_right_top_y , "car3"));
+	 car.push(this.add.image(car_right_bottom_x, car_right_bottom_y, "car4"));
+	 car.push(this.add.image(-128, scene_h/2 - 56 , "car5"));
+	 car.push(this.add.image(-128, scene_h/2 - 56 , "car6"));
+	 player = this.add.image(playerX, playerY, "player");
+
+	 background.setScale(1.8);
+	 car[0].setScale(3);
+	 car[1].setScale(3);
+	 car[2].setScale(3);
+	 car[2].flipX=true;
+	 car[3].setScale(3);
+	 car[3].flipX=true;
+	 car[4].setScale(3);
+	 car[5].setScale(3);
+	 player.setScale(3);
+
+		
+}
+
+
+function update(){
+	
+	car[0].x += dir;
+	//car2.x += dir;
+
+	if ((car[0].x + 128) > scene_w || (car[0].x - 128) < 0){
+		dir = -dir;
+	}
+
+
+	if (left_key.isDown){
+		player.x --;
+	}else if(up_key.isDown){
+		player.y --;
+	}else if(right_key.isDown){
+		player.x ++;
+	}else if(down_key.isDown){
+		player.y ++;
+	};
+
+
+
+
+}
+
+</script>
+</body>
+
+</html>

@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/pedrofenti/marcas_uf3/issues"
   },
-  "homepage": "https://github.com/pedrofenti/marcas_uf3#readme"
+  "homepage": "https://github.com/pedrofenti/marcas_uf3#readme",
+  "dependencies": {
+    "node-static": "^0.7.11"
+  }
 }
