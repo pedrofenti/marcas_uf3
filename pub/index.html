@@ -25,7 +25,22 @@ const config = {
 
 let game = new Phaser.Game(config);
 
+let background;
+
+const BG_SCALE = 2;
+const CAR_SCALE = 4;
+const CHAR_SCALE = 4;
+
 let car = [];
+
+let car_list = [
+	{name: "car1", image: "hotdog.png", speed: 3},
+	{name: "car2", image: "police.png", speed: 5},
+	{name: "car3", image: "buggy.png", speed: 6, flip: true},
+	{name: "car4", image: "bus.png", speed: 2, flip: true} ];
+
+const PATH_CARS = "PNG/Cars/";
+const PATH_CHARS = "PNG/Characters/";
 
 let car_left_top_x = -128;
 let car_left_top_y = scene_h/2 + 52;
@@ -39,25 +54,35 @@ let car_right_top_y = scene_h/2 - 52;
 let car_right_bottom_x = scene_w + 128;
 let car_right_bottom_y = scene_h/2 - 136;
 
-let background;
+let car_speed = 2;
+
 let player;
+
 let playerX = scene_w/2;
 let playerY = scene_h - 32;
+
+let player_speed = 1;
+
 let left_key;
 let up_key;
 let right_key;
 let down_key;
-let dir = 2;
 
 function preload(){
 	this.load.image("background", "road.jpg");
-	this.load.image("car1","PNG/Cars/hotdog.png");
-	this.load.image("car2","PNG/Cars/police.png");
-	this.load.image("car3","PNG/Cars/buggy.png");
-	this.load.image("car4","PNG/Cars/bus.png");
-	this.load.image("car5","PNG/Cars/formula.png");
-	this.load.image("car6","PNG/Cars/police.png");
-	this.load.image("player","PNG/Characters/man.png");
+
+	car_list.forEach(car => { //para ahorrarse lo comentado debajo
+		this.load.image(car.name, PATH_CARS+car.image);
+		});
+
+	//this.load.image("car1","PNG/Cars/hotdog.png");
+	//this.load.image("car2","PNG/Cars/police.png");
+	//this.load.image("car3","PNG/Cars/buggy.png");
+	//this.load.image("car4","PNG/Cars/bus.png");
+	//this.load.image("car5","PNG/Cars/formula.png");
+	//this.load.image("car6","PNG/Cars/police.png");
+
+	this.load.image("player", PATH_CHARS+"man.png");
 }
 
 function create(){
@@ -68,47 +93,92 @@ function create(){
 	 down_key = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);
 
 	 background = this.add.image(scene_w/2, scene_h/2, "background");
+
 	 car.push(this.add.image(car_left_top_x, car_left_top_y, "car1"));
 	 car.push(this.add.image(car_left_bottom_x, car_left_bottom_y, "car2"));
 	 car.push(this.add.image(car_right_top_x,car_right_top_y , "car3"));
 	 car.push(this.add.image(car_right_bottom_x, car_right_bottom_y, "car4"));
-	 car.push(this.add.image(-128, scene_h/2 - 56 , "car5"));
-	 car.push(this.add.image(-128, scene_h/2 - 56 , "car6"));
+//	 car.push(this.add.image(-128, scene_h/2 - 56 , "car5"));
+//	 car.push(this.add.image(-128, scene_h/2 - 56 , "car6"));
+
 	 player = this.add.image(playerX, playerY, "player");
 
-	 background.setScale(1.8);
-	 car[0].setScale(3);
-	 car[1].setScale(3);
-	 car[2].setScale(3);
-	 car[2].flipX=true;
-	 car[3].setScale(3);
-	 car[3].flipX=true;
-	 car[4].setScale(3);
-	 car[5].setScale(3);
-	 player.setScale(3);
+	 background.setScale(BG_SCALE);
 
-		
+	// car[0].setScale(SCALE);
+	// car[1].setScale(SCALE);
+	// car[2].setScale(SCALE);
+	// car[2].flipX=true;
+	// car[3].setScale(SCALE);
+	// car[3].flipX=true;
+  // car[4].setScale(3);
+  // car[5].setScale(3);
+
+
+	car.forEach( (element, index, array) => {
+		element.setScale(CAR_SCALE);
+		element.speed = car_list[index].speed;
+		if (car_list[index].flip){
+			element.flipX = true;
+		}
+	});
+
+	 player.setScale(CHAR_SCALE);	
 }
 
+function check_car (car, /*index, c_array*/){ //no se usan
+	
+	if (car.flipX){
+		if (car.x <= -128){
+			car.x = car_right_top_x;
+		}
+	}
+	else{
+		if (car.x >= scene_w + 128){
+			car.x = car_left_top_x;
+			}
+		}
+}
 
 function update(){
 	
-	car[0].x += dir;
-	//car2.x += dir;
+	car.forEach(car => {
+		if (car.flipX){
+			car.x -= car.speed;
+		}
+		else {
+			car.x += car.speed;
+		}
+	});
 
-	if ((car[0].x + 128) > scene_w || (car[0].x - 128) < 0){
-		dir = -dir;
-	}
+	//car[0].x += car_speed;
+	//car[1].x += car_speed;
+	//car[2].x -= car_speed;
+	//car[3].x -= car_speed;
 
+	car.forEach(check_car);
+
+	//car.forEach(function(car, index,c_array){ //funcion anonima
+	//});
+
+	/*for (let i=0; i < car.lenght; i++){
+		if (car[i].x + 128 > scene_w){
+			car[i].x = -128;	
+		}
+		else if (car[i].x - 128 < 0){
+			car[i].x = scene_w + 128;
+		}
+
+	}*/
 
 	if (left_key.isDown){
-		player.x --;
+		player.x -= player_speed;
 	}else if(up_key.isDown){
-		player.y --;
+		player.y -= player_speed;
 	}else if(right_key.isDown){
-		player.x ++;
+		player.x += player_speed;
 	}else if(down_key.isDown){
-		player.y ++;
+		player.y += player_speed;
 	};
 
 
