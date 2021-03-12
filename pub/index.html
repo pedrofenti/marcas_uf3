@@ -41,6 +41,7 @@ let car_list = [
 
 const PATH_CARS = "PNG/Cars/";
 //const PATH_PARTICLES = "phaser3-examples/public/assets/particles/";
+const PATH_CHARS = "PNG/Characters/";
 
 let car_left_top_x = -128;
 let car_left_top_y = scene_h/2 + 52;
@@ -72,6 +73,7 @@ function preload(){
 	this.load.image("background", "road.jpg");
 	
 //	this.load.image("fire", PATH_PARTICLES+"muzzleflash3.png");
+	this.load.image("smoke", "smoke.png");
 
 	car_list.forEach(car => { //para ahorrarse lo comentado debajo
 		this.load.image(car.name, PATH_CARS+car.image);
