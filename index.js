@@ -13,8 +13,6 @@ http.createServer((request, response) => {
 
 	public_files. serve(request, response);
 
-
-
 /*
 	if (request.url == "/fondo_estrellado.jpg"){
 		fs.readFile("fondo_estrellado.jpg", (error, content) => {

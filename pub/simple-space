@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang='en-gb' dir='ltr'>
+
+<head>
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width, initial-scale=1'>
+	<meta name='theme-color' content='#2ECC8A'>
+
+	<title>Kenney &bull; Simple Space</title>
+
+	<meta name='description' content='Kenney game studio creates games and free to use game assets!'>
+	<meta name='keywords' content=''>
+
+	<link rel="stylesheet" href="https://kenney.nl/data/css/bootstrap.css">
+<link rel="stylesheet" href="https://kenney.nl/data/css/bootstrap-grid.css">
+<link rel="stylesheet" href="https://kenney.nl/data/css/bootstrap-reboot.css">
+<link rel="stylesheet" href="https://kenney.nl/data/css/main.css">
+<link rel="stylesheet" href="https://kenney.nl/data/css/font.css">
+<link rel="stylesheet" href="https://kenney.nl/data/css/lity.css">
+<link rel="stylesheet" href="https://kenney.nl/data/css/animate.css">
+	
+	<link rel='shortcut icon' type='image/png' href='https://kenney.nl/favicon.png'/>
+	<link rel='shortcut icon' type='image/x-icon' href='https://kenney.nl/favicon.ico'/>
+	
+	<!-- OpenGraph !-->
+	
+	<meta property='fb:app_id'	content='382602661831045' />
+	
+	<meta property='og:url'		content='https://kenney.nl/assets/simple-space' />
+	<meta property='og:type'	content='article' />
+	
+	<meta property='og:title'	content='Kenney • Simple Space' />
+	
+	<meta property='og:description'	content="This package includes simple space craft and space related items for use in (mini) maps or arcade games." /><meta property='og:image'			content='https://kenney.nl/assets/simple-space/preview_kenney.png' />	
+</head>
+
+<body>
+
+	
+	<div class='support-bar noselect'>
+	
+		<div class='container'>
+			
+			<div class='float-right'>
+				<ul class='horizontal-list menu'>
+					<li><a href='https://kenney.itch.io/kenney-donation' target='_blank'>Donate</a></li>
+					<li><a href='https://kenney.nl/documentation/'>Documentation</a></li>
+					<li><a href='https://kenney.nl/labs'>Labs</a></li>
+					<li><a href='https://kenney.nl/support'>Support</a></li>
+				</ul>
+			</div>
+				
+		</div>
+	
+	</div>
+	
+	<div class='top-bar noselect'>
+	
+		<div class='container'>
+		
+			<div class='float-left'>
+			
+				<a href='https://kenney.nl' id='logo'>
+					<img src='https://kenney.nl/data/img/logo.png'/>
+				</a>
+				
+			</div>
+				
+			<div class='float-right'>
+				<ul class='d-none d-lg-block'>
+				
+									
+					<li><a href='https://kenney.nl/games' class=''><i class='mdi icon-push icon-game'></i> Games</a></li>
+					<li><a href='https://kenney.nl/tools' class=''><i class='mdi icon-push icon-cog'></i> Tools</a></li>
+					<li><a href='https://kenney.nl/assets' class='active'><i class='mdi icon-push icon-asset'></i> Assets</a></li>
+					<li><a href='https://kenney.nl/store' class=''><i class='mdi icon-push icon-store'></i> Store</a></li>
+				</ul>
+				
+				<ul class='d-md-block d-lg-none'>
+					<div class='dropdown show'>
+						<li id='dropdownMenuButton' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'><a href='#'><i class='mdi icon-menu'></i></a></li>
+						<div class='dropdown-menu' aria-labelledby='dropdownMenuButton'>
+							<a class='dropdown-item' href='https://kenney.nl/games'><i class='mdi icon-push icon-game'></i> Games</a>
+							<a class='dropdown-item' href='https://kenney.nl/tools'><i class='mdi icon-push icon-cog'></i> Tools</a>
+							<a class='dropdown-item' href='https://kenney.nl/assets'><i class='mdi icon-push icon-asset'></i> Assets</a>
+							<a class='dropdown-item' href='https://kenney.nl/store'><i class='mdi icon-push icon-store'></i> Store</a>
+							<hr>
+							<a class='dropdown-item' href='https://kenney.itch.io/kenney-donation' target='_blank'>Donate</a>
+							<a class='dropdown-item' href='https://kenney.nl/documentation/'>Documentation</a>
+							<a class='dropdown-item' href='https://kenney.nl/labs'>Labs</a>
+							<a class='dropdown-item' href='https://kenney.nl/support'>Support</a>
+						</div>
+					</div>
+				</ul>
+			</div>
+			
+			<div class='clearfix'></div>
+			
+		</div>
+	
+	</div>
+
+<link rel="stylesheet" href="https://kenney.nl/data/css/main.asset.css">
+
+<section id='header-small' class='noselect color-blue' style='background-image:url(" https://kenney.nl/content/3-assets/1-simple-space/preview_kenney.png ")'></section>
+
+<div class='checkers'>
+	<div class='container animated fadeIn'>
+	
+			
+		<div class='float-left'>
+			<ul class='horizontal-list'>
+				<li><strong>Included assets</strong>48×</li>
+				<li><strong>Size</strong> 311.37 kB</li>
+				<li><strong>Tags</strong>
+				
+				<a href='https://kenney.nl/assets?t=space' class='label label-default cat-label'>space</a><a href='https://kenney.nl/assets?t=sci-fi' class='label label-default cat-label'>sci-fi</a><a href='https://kenney.nl/assets?t=map' class='label label-default cat-label'>map</a>				
+				</li>
+			</ul>
+		</div>
+		
+		<div class='float-right'>
+			
+					
+				<a href='https://kenney.nl/content/3-assets/1-simple-space/kenney_simplespace.zip' onclick='lity("#inline")' class='btn btn-simple grey'>Download</a>
+			
+						
+						
+		</div>
+		
+		<div class='push smaller'></div>
+		
+		<div class='row'>
+		
+			<div class='col-md-7 text-justify kirbytext'>
+				
+				<h1>Simple Space</h1>
+				
+				<p>This package includes simple space craft and space related items for use in (mini) maps or arcade games.</p>			
+				<link rel="stylesheet" href="https://kenney.nl/data/css/main.donate.css">
+<ul class='donate-list'>
+
+	<li style='font-weight:bold'>Consider a donation:</li><br>
+	
+	<a target='_blank' href='https://kenney.itch.io/kenney-donation' class='btn btn-simple btn-donate noselect'>Donate</a>
+	<a target='_blank' href='https://www.patreon.com/kenney' class='btn btn-simple btn-patreon noselect'>Patreon</a>
+
+</ul>
+
+<style>
+
+	.btn-donate{
+		
+		padding: 8px 30px;
+		border:2px solid #2ECC9B !important;
+		color:#2ECC9B !important;
+		
+	}
+	
+	.btn-donate:hover{ color:white !important; padding: 8px 30px; border:2px solid #545C68 !important; }
+	
+	.btn-patreon{
+		
+		padding: 8px 30px;
+		border:2px solid #FF243E !important;
+		color:#FF243E !important;
+		
+	}
+	
+	.btn-patreon:hover{ color:white !important; padding: 8px 30px; border:2px solid #545C68 !important; }
+	
+</style>				
+			</div>
+			
+			<div class='col-md-1'></div>
+			
+			<div class='col-md-4'>
+			
+				<h3>Preview</h3>
+				
+								
+							
+				<a class='screenshot' href='https://kenney.nl/content/3-assets/1-simple-space/preview_kenney.png' style='background-image:url("https://kenney.nl/content/3-assets/1-simple-space/preview_kenney.png")' data-lity></a>
+				
+				 <a class='screenshot' href='https://kenney.nl/assets/simple-space/sample.png' style='background-image:url("https://kenney.nl/assets/simple-space/sample.png")' data-lity></a> 				
+				<div class='info' style='font-size:75%; margin:0px'>
+					<strong>License:</strong> (<a href='https://creativecommons.org/publicdomain/zero/1.0/' target='_blank'>CC0 1.0 Universal</a>) You're free to use these game assets in any project, personal or commercial. There's no need to ask permission before using these. Giving attribution is not required, but is greatly appreciated!
+				</div>
+				
+			</div>
+		
+		</div>
+		
+		<div class='row'>
+		
+			<div class='col-md-12' style='text-align:center'>
+			
+				<div class='push'></div>
+			
+				<!-- <a href='https://store.steampowered.com/app/1491720/Frick_Inc' target='_blank' class='hide-mobile noselect'><img src='https://kenney.nl/data/img/promo.png' style='border-radius:4px' class='img-fluid' /></a> !-->
+			
+			</div>
+			
+		</div>
+	
+	</div>
+</div>
+
+<div id='inline' class='lity-hide pop checkers'>
+	
+	<h1>Thanks for downloading!</h1>
+	
+	<p>The package you've just downloaded was made available for free, check the license below or included in the download. Consider a donation (not required) to support the creation of game assets!</p>
+	
+	<link rel="stylesheet" href="https://kenney.nl/data/css/main.donate.css">
+<ul class='donate-list'>
+
+	<li style='font-weight:bold'>Consider a donation:</li><br>
+	
+	<a target='_blank' href='https://kenney.itch.io/kenney-donation' class='btn btn-simple btn-donate noselect'>Donate</a>
+	<a target='_blank' href='https://www.patreon.com/kenney' class='btn btn-simple btn-patreon noselect'>Patreon</a>
+
+</ul>
+
+<style>
+
+	.btn-donate{
+		
+		padding: 8px 30px;
+		border:2px solid #2ECC9B !important;
+		color:#2ECC9B !important;
+		
+	}
+	
+	.btn-donate:hover{ color:white !important; padding: 8px 30px; border:2px solid #545C68 !important; }
+	
+	.btn-patreon{
+		
+		padding: 8px 30px;
+		border:2px solid #FF243E !important;
+		color:#FF243E !important;
+		
+	}
+	
+	.btn-patreon:hover{ color:white !important; padding: 8px 30px; border:2px solid #545C68 !important; }
+	
+</style>	
+	<div class='info'>
+		<strong>License:</strong> (<a href='https://creativecommons.org/publicdomain/zero/1.0/' target='_blank'>CC0 1.0 Universal</a>) You're free to use these game assets in any project, personal or commercial. There's no need to ask permission before using these. Giving attribution is not required, but is greatly appreciated!
+	</div>
+	
+	<p style='text-align:center; margin-bottom:0px'><a href='http://social.kenney.nl/twitter/' target='_blank' class='btn btn-simple active'>Follow Kenney on Twitter</a></p>
+	
+</div>
+
+<div class='push larger'></div>
+
+<footer class='footer'>
+	<div class='footer-top'>
+		<div class='container'>
+			<div class='row center-mobile'>
+			
+				<div class='col-sm-3 hide-mobile'>
+					<ul class='footer-list'>
+						<li class='list-head'>Games</li>
+						<li><a href='https://kenney.nl/games/pixross'>Pixross</a></li><li><a href='https://kenney.nl/games/frick-inc'>Frick, Inc.</a></li><li><a href='https://kenney.nl/games/keycars'>KeyCars</a></li>					</ul>
+				</div>
+				
+				<div class='col-sm-3 hide-mobile'>
+					<ul class='footer-list'>
+						<li class='list-head'>Tools</li>
+						<li><a href='https://kenney.nl/tools/assetforge'>Asset Forge</a></li><li><a href='https://kenney.nl/tools/kenshape'>KenShape</a></li><li><a href='https://kenney.nl/tools/gamego'>GameGO</a></li>					</ul>
+				</div>
+
+				<div class='col-sm-3 hide-mobile'>
+					<ul class='footer-list'>
+						<li class='list-head'>Game assets</li>
+						<li><a href='https://kenney.nl/assets'>Overview</a></li>
+						<li><a href='https://kenney.nl/assets?q=2d'>2D Game assets</a></li>
+						<li><a href='https://kenney.nl/assets?q=3d'>3D Game assets</a></li>
+					</ul>
+				</div>
+
+				<div class='col-sm-3 hide-mobile text-right'>
+					<ul class='footer-list'>
+						<li class='list-head'>Contact</li>
+						<li><a href='https://kenney.nl/support'>Support</a></li>
+						<li><a target='_blank' href='http://social.kenney.nl/twitter'>Twitter</a></li>
+						<li><a target='_blank' href='http://social.kenney.nl/facebook'>Facebook</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class='footer-bar noselect'>
+		<div class='container'>
+			<div class='row'>
+
+				<div class='col-md-4 center-mobile'><a class='no-underline' href='https://kenney.nl'><img src='https://kenney.nl/data/img/logo-outline.png'/></a> <span style='margin:10px'>&</span> <a class='no-underline black-white' href='http://www.pixeland.io' target='_blank'><img src='https://kenney.nl/data/img/logo-pixeland.png'/></a></div>
+				<div class='col-md-4 text-center' style='padding-top:7px'>Copyright © 2010 - 2021 All rights reserved</div>
+				<div class='col-md-4 text-right center-mobile' style='padding-top:7px'><a href='https://kenney.nl/terms-of-service'>Terms of Service / Privacy policy</a></div>
+
+			</div>
+		</div>
+	</div>
+</footer>
+
+<script type='text/javascript' src='https://kenney.nl/data/js/jquery.js'></script>
+<script type='text/javascript' src='https://kenney.nl/data/js/bootstrap.popper.js'></script>
+<script type='text/javascript' src='https://kenney.nl/data/js/bootstrap.js'></script>
+
+<script type='text/javascript' src='https://kenney.nl/data/js/lity.js'></script>
+  
+</body>
+
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,800&display=swap' rel='stylesheet'>
+
+</html>

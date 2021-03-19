@@ -3,7 +3,7 @@ const scene_h = 480;
 
 let player_init_x = 32;
 
-let player_speed = 2;
+let player_speed = 1;
 
 let background;
 let player;
@@ -17,7 +17,7 @@ let down_key;
 let space_key;
 
 const MAX_ENEMIES = 128;
-const MAX_BULLETS = 128;
+const MAX_BULLETS = 3;
 
 const BULLET_INIT_X = -1000;
 const BULLET_INIT_Y = -1000;
@@ -26,25 +26,41 @@ const SCREEN_MARGIN = 32;
 
 function preload () {
 
+	the_game = this;
+
 	this.load.image("background", "stars.jpg");
-	this.load.image("player", "PNG/Characters/man.png");
-	this.load.image("enemy", "PNG/Characters/woman.png");
-	this.load.image("bullet", "PNG/Cars/scooter.png");
+	this.load.image("player", "PNG/Default/ship_K.png");
+	this.load.image("enemy", "PNG/Default/enemy_A.png");
+	this.load.image("bullet", "PNG/Default/star_tiny.png");
 }
 
 function create () {
-
+	
+	enemies = [];
+	bullets = [];
+	
 	 background = this.add.image(scene_w/2, scene_h/2, "background");
 	 background.setScale(1.3);
-	 player = this.add.image(player_init_x, scene_h/2, "player");
-	 player.setScale(3);
+	 player = this.physics.add.image(player_init_x, scene_h/2, "player");
+	 player.setScale(0.8);
 
 	for (let i = 0; i < MAX_ENEMIES; i++) {
 		let x = Math.random()*scene_w*10 + scene_w/2;
 		let y = Math.random()*scene_h;
 		
-		enemies.push(this.add.image(x, y, "enemy"));
+		enemies.push(this.physics.add.image(x, y, "enemy"));
 	}
+
+	enemies.forEach((element)=>{
+			element.setScale(0.6);
+	});
+	
+	enemies.forEach(function(element){
+			the_game.physics.add.overlap(player, element, function (p, c) {
+				the_game.scene.restart();
+			}, null, the_game);
+		});
+
 
 	for (let i = 0; i < MAX_BULLETS; i++){
 		bullets.push(this.add.image(BULLET_INIT_X, BULLET_INIT_Y, "bullet"));
@@ -57,7 +73,7 @@ function create () {
 	 down_key = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);
 	 space_key = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
 
-}
+	}
 
 function update () {
 
@@ -74,7 +90,7 @@ function update () {
 	if (space_key.isDown){
 			let found = false;
 			for (let i = 0; i < MAX_BULLETS && !found; i++){
-				if(!bullets[i].moving){
+				if(!bullets[i].moving && this.time.now > 1){
 					bullets[i].moving = true;
 					bullets[i].x = player.x;
 					bullets[i].y = player.y;
@@ -106,6 +122,12 @@ const config = {
   width: scene_w,
   height: scene_h,
   pixelArt: true,
+	physics: {
+		default: 'arcade',
+		arcade: {
+			debug: true,
+		}
+	},
   scene: {
     preload: preload,
     create: create,
