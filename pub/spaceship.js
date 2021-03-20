@@ -46,6 +46,23 @@ function preload () {
 	this.load.audio("explosion", "Audio/explosionCrunch_000.ogg");
 }
 
+function create_particle(color){
+	particles.createEmitter({
+  		  alpha: { start: 1, end: 0 },
+        scale: { min: 0.05, max: 0.4 },
+				angle: { min: 0, max: 300 },
+        speed: { min: 100, max: 500 },
+        quantity: { min: 2, max: 10 },
+        lifespan: 4000,
+        rotate: { start: 0, end: 360, /*ease: 'Back.easeOut'*/ },
+        quantity: 32,
+				tint: color,
+        on: false
+	 });
+
+	 }
+
+
 function create () {
 	
 	//seteo los arrays y los puntos para q al resetear, que no se queden colgados 
@@ -68,19 +85,6 @@ function create () {
 	 //anyadir las particulas 
    particles = this.add.particles("bullet");
 	 
-	 particles.createEmitter({
-  		  alpha: { start: 1, end: 0 },
-        scale: { min: 0.05, max: 0.4 },
-				angle: { min: 0, max: 300 },
-        speed: { min: 100, max: 500 },
-        quantity: { min: 2, max: 10 },
-        lifespan: 4000,
-        rotate: { start: 0, end: 360, /*ease: 'Back.easeOut'*/ },
-        quantity: 32,
-				tint: 0xffffff,
-        on: false
-	 });
-
 	//poner el texto en partida
 	score_text = this.add.text(scene_w/2, scene_h/2 - 200, "Points: 0",{ fontWeight: 'bold', fontStyle: 'italic', fontFamily: 'sans-serif',  color:'#fff', fontSize: '30px'}).setOrigin(0.5,0.5);
 
@@ -137,7 +141,7 @@ function create () {
 				element.moving = false;
 				score++;
 				score_text.setText('Points: ' + score);
-				particles.tint = e.color;
+				create_particle(e.color);
 				particles.emitParticleAt(e.x, e.y);
 				e.destroy();
 				explosion_audio.play();
