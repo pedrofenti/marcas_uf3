@@ -40,6 +40,7 @@ let car_list = [
 	{name: "car4", image: "bus.png", speed: 2, flip: true} ];
 
 const PATH_CARS = "PNG/Cars/";
+//const PATH_PARTICLES = "phaser3-examples/public/assets/particles/";
 const PATH_CHARS = "PNG/Characters/";
 
 let car_left_top_x = -128;
@@ -71,6 +72,7 @@ let down_key;
 function preload(){
 	this.load.image("background", "road.jpg");
 	
+//	this.load.image("fire", PATH_PARTICLES+"muzzleflash3.png");
 	this.load.image("smoke", "smoke.png");
 
 	car_list.forEach(car => { //para ahorrarse lo comentado debajo
@@ -84,7 +86,7 @@ function preload(){
 	//this.load.image("car5","PNG/Cars/formula.png");
 	//this.load.image("car6","PNG/Cars/police.png");
 
-	this.load.spritesheet("player", "man_spritesheet.png", {frameWidth: 16 ,frameHeight: 16});
+this.load.spritesheet("player", "man_spritesheet.png", {frameWidth: 16, frameHeight: 16});
 }
 
 function create(){
@@ -95,6 +97,26 @@ function create(){
 	 down_key = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);
 
 	 background = this.add.image(scene_w/2, scene_h/2, "background");
+
+	// particles = this.add.particles("fire");
+
+	// particles.createEmitter({
+    //    alpha: { start: 1, end: 0 }, //profundidad
+      //  scale: { start: 0.5, end: 2.5 }, //escala de principio a fin
+        //tint: { start: 0xff945e, end: 0xff945e },
+        //tint: { start: 0xffffff, end: 0x000000 }, //cambia un poco el color
+      //  speed: 20, //velocidad de las particulas
+				//accelerationY:
+     //   accelerationX: -300, //hacia donde se va el humo
+     //   angle: { min: -85, max: -95 }, //angulo en el qe estan
+     //   rotate: { min: -180, max: 180 }, //rotacion de las particulas
+     //   lifespan: { min: 1000, max: 1100 }, // 
+     //   blendMode: 'ADD',
+     //   frequency: 110, //la frequencia a la que salen las particulas >=0
+      //  maxParticles: 10, //maximo de particulas, 0 es ilimitadas
+     //   x: 270,
+      //  y: 420
+  //  });
 
 	 car.push(this.add.image(car_left_top_x, car_left_top_y, "car1"));
 	 car.push(this.add.image(car_left_bottom_x, car_left_bottom_y, "car2"));
@@ -112,6 +134,15 @@ function create(){
 	 playerSprite = this.add.sprite(playerX, playerY, "player").setScale(CHAR_SCALE);
 
 	 background.setScale(BG_SCALE);
+	const playerAnimation = this.anims.create({
+		key: 'walk',
+		frames: this.anims.generateFrameNumbers("player"),
+		frameRate:7
+	});
+	
+	playerSprite = this.add.sprite(playerX, playerY, "player").setScale(CHAR_SCALE);
+	
+		 background.setScale(BG_SCALE);
 
 	// car[0].setScale(SCALE);
 	// car[1].setScale(SCALE);
@@ -153,7 +184,6 @@ function create(){
         y: playerY,
 				follow: car
     });
-
 
 }
 
@@ -203,12 +233,14 @@ function update(){
 	}*/
 
 	if (left_key.isDown){
+		playerSprite.flipX = true;
 		playerSprite.play('walk', true);
 		playerSprite.x -= player_speed;
 	}else if(up_key.isDown){
 		playerSprite.play('walk', true);
 		playerSprite.y -= player_speed;
 	}else if(right_key.isDown){
+		playerSprite.flipX = false;
 		playerSprite.play('walk', true);
 		playerSprite.x += player_speed;
 	}else if(down_key.isDown){
